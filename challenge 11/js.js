@@ -112,128 +112,62 @@ const a3 = [{
     },
 ]
 
-// .map()
-// .filter()
-// .reduce()
-// .find()
-// .replace()
-// forEach()
-
-
-
 // Part 1 - Find all users older than 24
-
-a1.filter((element) => {
-
-    return element.age > 24;
-
-}).forEach(element => {
-
-    console.log(`Imie: ` + element.name + ` Wiek: ` + element.age);
-
-});
+a1.filter(element => element.age > 24).forEach(element => console.log(`Imie: ` + element.name + ` Wiek: ` + element.age));
 
 
 // Part 2 - Find the total age of all users
-console.log(`Suma lat: ` +
-    a1.reduce((total, element) => {
+console.log(`Suma lat: ` + a1.reduce((total, element) => total + element.age, 0));
 
-        return total + element.age;
-
-    }, 0));
 
 // Part 3 - List all female coders
-a1.filter(element => {
+a1.filter(element => element.gender === `f`).forEach(element => console.log(`Imie: ` + element.name + ` Wiek: ` + element.age));
 
-    return element.gender === `f`;
-
-}).forEach(element => {
-
-    console.log(`Imie: ` + element.name + ` Wiek: ` + element.age);
-
-});
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
+
 
 // Part 1 - List all users in US in descending order
 console.log(`------------------List all users in US in descending order--------------------`);
-a2.filter(element => {
 
-    return element.us;
-
-}).sort((element1, element2) => {
-
-    return element1.name > element2.name;
-
-}).forEach(element => {
-
-    console.log(`Imie: ` + element.name + ` Wiek: ` + element.age);
-
-});
+a2.filter(element => element.us)
+    .sort((element1, element2) => element1.name > element2.name)
+    .forEach(element => console.log(`Imie: ` + element.name + ` Wiek: ` + element.age));
 
 
 // Part 2 - Sort all users by age
 console.log(`-----------------------------Sort all users by age----------------------------`);
-a2.sort((element1, element2) => {
 
-    return element1.age > element2.age;
-
-}).forEach(element => {
-
-    console.log(`Imie: ` + element.name + ` Wiek: ` + element.age);
-
-});
+a2.sort((element1, element2) => element1.age > element2.age).forEach(element => console.log(`Imie: ` + element.name + ` Wiek: ` + element.age));
 
 
 // Part 3 -  List all female coders
-console.log(`----------------------------List all female coders--------------------------`);
-a2.filter(element => {
+console.log(`-------------------------------List all female coders-----------------------------`);
 
-    return element.gender === `f` && element.coder;
+a2.filter(element => element.gender === `f` && element.coder).forEach(element => console.log(`Imie: ` + element.name + ` Wiek: ` + element.age + ` Płeć: ` + element.gender + ` Koder: ` + element.coder));
 
-}).forEach(element => {
-
-    console.log(`Imie: ` + element.name + ` Wiek: ` + element.age + ` Płeć: ` + element.gender + ` Koder: ` + element.coder);
-
-});
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
+
 
 // Part 1 - Find the total age of male coders under 25
-console.log(`----------------------------Total age of male coders under 25--------------------------`);
+console.log(`-------------------------Total age of male coders under 25------------------------`);
 
-console.log(a3.filter(element => {
-
-    return element.gender === `m` && element.coder && element.age < 25;
-
-}).reduce((total, element) => {
-
-    return total + element.age;
-
-}, 0));
+console.log(a3.filter(element => element.gender === `m` && element.coder && element.age < 25)
+    .reduce((total, element) => total + element.age, 0));
 
 
 // Part 2 - List all male coders over 30
 console.log(`----------------------------List all male coders over 30--------------------------`);
-a3.filter(element => {
 
-    return element.gender === `m` && element.age > 30;
-
-}).forEach(element => {
-
-    console.log(`Imie: ` + element.name + ` Wiek: ` + element.age);
-
-});
+a3.filter(element => element.gender === `m` && element.age > 30).forEach(element => console.log(`Imie: ` + element.name + ` Wiek: ` + element.age));
 
 
 // Part 3 - Find the total age of everyone in texasss, newieyork and vegzas combined.
-console.log(`Suma lat wszystkich ludzi: ` + (
-    [...a1, ...a2, ...a3].reduce((total, element) => {
+console.log(`---------------------------ind the total age of everyone--------------------------`);
 
-        return total + element.age;
-
-    }, 0)));
+console.log(`Suma lat wszystkich ludzi: ` + ([...a1, ...a2, ...a3].reduce((total, element) => total + element.age, 0)));
