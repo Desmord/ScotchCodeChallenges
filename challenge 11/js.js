@@ -138,12 +138,9 @@ a1.filter((element) => {
 console.log(`Suma lat: ` +
     a1.reduce((total, element) => {
 
-        total.age = total.age + element.age;
+        return total + element.age;
 
-        return total;
-
-    }).age);
-
+    }, 0));
 
 // Part 3 - List all female coders
 a1.filter(element => {
@@ -213,17 +210,11 @@ console.log(a3.filter(element => {
 
     return element.gender === `m` && element.coder && element.age < 25;
 
-}).map(element => {
-
-    return element.age;
-
 }).reduce((total, element) => {
 
-    total = total.age + element.age;
+    return total + element.age;
 
-    return total + element
-
-}));
+}, 0));
 
 
 // Part 2 - List all male coders over 30
@@ -241,30 +232,8 @@ a3.filter(element => {
 
 // Part 3 - Find the total age of everyone in texasss, newieyork and vegzas combined.
 console.log(`Suma lat wszystkich ludzi: ` + (
-    a1.map(element => {
+    [...a1, ...a2, ...a3].reduce((total, element) => {
 
-        return element.age;
+        return total + element.age;
 
-    }).reduce((total, element) => {
-
-        return total + element;
-
-    }) +
-    a2.map(element => {
-
-        return element.age;
-
-    }).reduce((total, element) => {
-
-        return total + element;
-
-    }) +
-    a3.map(element => {
-
-        return element.age;
-
-    }).reduce((total, element) => {
-
-        return total + element;
-
-    })));
+    }, 0)));
