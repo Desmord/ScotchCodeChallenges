@@ -1,0 +1,94 @@
+.container {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.lightsaber {
+    padding-top: 350px;
+    padding-left: 100px;
+}
+
+.lightsaber-handler {
+    position: relative;
+}
+
+.lightsaber-handler label {
+    position: relative;
+    width: 6px;
+    transform: scale(2);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.lightsaber input[type=checkbox] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    -moz-opacity: 0;
+    -webkit-opacity: 0;
+    -o-opacity: 0;
+    -ms-opacity: 0;
+    z-index: 77;
+}
+
+.lightsaber .sword {
+    position: absolute;
+    bottom: 0;
+    left: -2px;
+    width: 10px;
+    display: block;
+    filter: blur(1px);
+    -moz-filter: blur(1px);
+    -webkit-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    height: 0;
+    z-index: -2;
+    background-color: white;
+    box-shadow: 0px 0px 10px, 0px 0px 2px inset;
+    animation: glow 1.5s linear infinite;
+    transition: height 300ms, ;
+    -moz-transition: height 300ms;
+    -webkit-transition: height 300ms;
+    -o-transition: height 300ms;
+    -ms-transition: height 300ms;
+    border-radius: 12px 12px 0 0;
+}
+
+.lightsaber input[type=checkbox]:checked~div.sword {
+    height: 290px;
+}
+
+.lightsaber-handler input[type="checkbox"] {
+    display: none;
+}
+
+.lightsaber-handler label:before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 8px;
+    height: 12px;
+    background-image: linear-gradient(to right, transparent 1px, rgba(255, 255, 255, 0.4) 1px, rgba(255, 255, 255, 0.8) 3px, rgba(255, 255, 255, 0.3) 4px, rgba( 0, 0, 0, 0.2) 7px, transparent 7px), linear-gradient(to bottom, orange 3px, black 3px, black 4px, transparent 4px, transparent 8px, black 8px, black 9px, orange 9px, orange 11px, black 11px, black 12px), linear-gradient(to left, transparent 1px, orange 1px, orange 7px, transparent 7px);
+    box-shadow: 1px 25px 0px 0px #555, 2px 25px 0px 0px silver, 2px 25px 0px 1px #222;
+}
+
+@keyframes glow {
+    from {
+        color: lime;
+        box-shadow: 0 0 29px lime;
+    }
+    50% {
+        color: lime;
+        box-shadow: 0 0 48px lime;
+    }
+    to {
+        color: lime;
+        box-shadow: 0 0 39px lime;
+    }
