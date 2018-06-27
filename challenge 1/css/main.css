@@ -1,9 +1,50 @@
-body{
-    background-color: rgb(240, 243, 237);
+body {
+    background-color: rgb(85, 86, 90);
 }
 
-.container{
+.container {
     margin: 0 auto;
     width: 80vw;
     height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: sans-serif;
+    background-color: rgb(112, 196, 104);
+    border-radius: 15px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(98, 180, 91);
+}
+
+.anim {
+    animation: jiggle 0.5s ease-in 1;
+}
+
+@keyframes jiggle {
+    0% {
+        transform: scale(1)
+    }
+    16% {
+        transform: scale(1.1, 0.9)
+    }
+    32% {
+        transform: scale(0.9, 1.2)
+    }
+    48% {
+        transform: scale(1)
+    }
 }
