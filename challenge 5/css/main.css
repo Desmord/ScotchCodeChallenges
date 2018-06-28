@@ -1,3 +1,29 @@
-body{
-    background-color: rgb(190, 188, 188);
+body {
+    background-color: rgb(23, 163, 107);
+    width: 100vw;
+    height: 100vh;
+}
+
+.video {
+    margin: 50px 0px 10px 50px;
+    width: 600px;
+    height: 400px;
+}
+
+.videolist {
+    width: 900px;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.videolist__movie {
+    width: 180px;
+    height: 140px;
+    margin: 5px;
+}
+
+.videolist__movie:hover {
+    cursor: pointer;
 }
