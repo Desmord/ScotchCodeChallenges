@@ -67,6 +67,7 @@
     top: -250px;
     left: 150px;
     border-radius: 15px 15px 40px 40px;
+    animation: bounceMouth 1.3s ease-in-out infinite;
 }
 
 @keyframes bounceBody {
@@ -102,5 +103,11 @@
     }
     75% {
         transform: translateY(-15px) rotate(30deg)
+    }
+}
+
+@keyframes bounceMouth {
+    50% {
+        transform: scale(1.1, 1.1)
     }
 }
