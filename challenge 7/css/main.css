@@ -1,3 +1,38 @@
-body{
-    background-color: rgb(190, 188, 188);
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    background-color: rgb(104, 177, 219);
+    overflow: hidden;
+}
+
+.menu {
+    background-color: #fff;
+    float: left;
+    width: 20%;
+    height: 90%;
+    margin-left: -20%;
+    transition: all 1s;
+}
+
+.content {
+    width: 80%;
+    height: 90%;
+    float: left;
+}
+
+.button {
+    width: 209px;
+    height: 40px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: rgb(97, 194, 118);
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(62, 138, 78);
 }

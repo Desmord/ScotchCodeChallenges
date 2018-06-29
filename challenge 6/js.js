@@ -7,7 +7,7 @@ let interval = null,
     time = `25:00`;
 
 
-const playInterval = () => {
+const playF = () => {
 
     let minute = Number.parseInt(time.substring(0, 2)),
         second = Number.parseInt(time.substring(3, 5));
@@ -27,12 +27,8 @@ const playInterval = () => {
     }
 
     interval = setTimeout(() => {
-        playInterval();
+        playF();
     }, 1000);;
-}
-
-const playF = () => {
-    playInterval();
 }
 
 const pauseF = () => {
