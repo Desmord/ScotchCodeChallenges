@@ -1,3 +1,77 @@
-body{
-    background-color: rgb(190, 188, 188);
+body {
+    background: linear-gradient(to right, rgb(169, 170, 255), rgb(186, 188, 240));
+    font-family: sans-serif;
+    font-weight: 700;
+    width: 100vw;
+    height: 100vh;
+}
+
+.timer {
+    margin: 100px auto;
+    width: 500px;
+    height: 150px;
+    font-size: 100px;
+    color: rgb(57, 121, 216);
+    text-align: center;
+}
+
+.menu {
+    width: 650px;
+    height: 150px;
+    margin-left: 33%;
+    color: white;
+    font-size: 40px;
+}
+
+.menu__button--play {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background-color: rgb(50, 190, 120);
+    float: left;
+}
+
+.menu__button--play:hover {
+    cursor: pointer;
+    background-color: rgb(33, 143, 88);
+}
+
+.menu__button--pause {
+    width: 200px;
+    height: 100px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background-color: rgb(95, 146, 223);
+    float: left;
+}
+
+.menu__button--pause:hover {
+    cursor: pointer;
+    background-color: rgb(50, 106, 190);
+}
+
+.menu__button--reset {
+    width: 200px;
+    height: 100px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background-color: rgb(223, 95, 127);
+    float: left;
+}
+
+.menu__button--reset:hover {
+    background-color: rgb(194, 66, 98);
+    cursor: pointer;
 }
